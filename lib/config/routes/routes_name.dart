@@ -1,4 +1,6 @@
 import 'package:bloc_mvc/config/routes/routes.dart';
+import 'package:bloc_mvc/view/home/home_screen.dart';
+import 'package:bloc_mvc/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -8,10 +10,10 @@ class Routes {
         return MaterialPageRoute(builder: (BuildContext context) => Container());
 
       case RoutesName.home:
-        return MaterialPageRoute(builder: (BuildContext context) => Container());
+        return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
 
       case RoutesName.login:
-        return MaterialPageRoute(builder: (BuildContext context) => Container());
+        return MaterialPageRoute(builder: (BuildContext context) => LoginScreen());
 
       default:
         return MaterialPageRoute(builder: (_) {

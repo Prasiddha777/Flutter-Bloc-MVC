@@ -1,3 +1,5 @@
+import 'package:bloc_mvc/config/routes/routes.dart';
+import 'package:bloc_mvc/config/routes/routes_name.dart';
 import 'package:bloc_mvc/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +35,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      initialRoute: RoutesName.login,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
