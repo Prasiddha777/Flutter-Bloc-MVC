@@ -1,4 +1,6 @@
 import 'package:bloc_mvc/bloc/login/bloc/login_bloc.dart';
+import 'package:bloc_mvc/main.dart';
+import 'package:bloc_mvc/repository/auth/login_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'widget/widgets.dart'; // Importing custom widget components
@@ -21,9 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _loginBlocs = LoginBloc();
+    _loginBlocs = LoginBloc(loginRepository: getIt());
   }
 
   @override

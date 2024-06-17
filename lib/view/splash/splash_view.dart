@@ -1,3 +1,4 @@
+import 'package:bloc_mvc/services/splash_services.dart';
 import 'package:flutter/material.dart';
 
 /// A widget representing the splash screen of the application.
@@ -10,12 +11,13 @@ class SplashView extends StatefulWidget {
 
 /// The state of the [SplashView] widget.
 class _SplashViewState extends State<SplashView> {
+  SplashServices splashServices = SplashServices();
   // @override
-  // void initState() {
-  //   super.initState();
-  //   // Calls the [checkAuthentication] method from [SplashServices] to handle authentication logic
-  //   splashServices.checkAuthentication(context);
-  // }
+  void initState() {
+    super.initState();
+    // Calls the [checkAuthentication] method from [SplashServices] to handle authentication logic
+    splashServices.isLogin(context);
+  }
 
   @override
   Widget build(BuildContext context) {

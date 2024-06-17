@@ -1,9 +1,14 @@
 import 'package:bloc_mvc/config/routes/routes.dart';
 import 'package:bloc_mvc/config/routes/routes_name.dart';
-import 'package:bloc_mvc/view/login/login_view.dart';
+import 'package:bloc_mvc/repository/auth/login_repository.dart';
+import 'package:bloc_mvc/repository/movies/movies_http_api_repository.dart';
+import 'package:bloc_mvc/repository/movies/movies_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
+GetIt getIt = GetIt.instance;
 void main() {
+  serviceLocator();
   runApp(const MyApp());
 }
 
@@ -36,8 +41,13 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: LoginScreen(),
-      initialRoute: RoutesName.login,
+      initialRoute: RoutesName.splash,
       onGenerateRoute: Routes.generateRoute,
     );
   }
+}
+
+void serviceLocator() {
+  getIt.registerLazySingleton<LoginRepository>(() => LoginRepository());
+  getIt.registerLazySingleton<MoviesRepository>(() => MoviesHttpApiRepository());
 }
